@@ -1,111 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'formulario',
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css'],
 })
+  
 export class FormularioComponent implements OnInit {
 
+  @Output() formIsValid: EventEmitter<any> = new EventEmitter();
   form: FormGroup;
-  formIsValid: boolean;
+  validar: boolean;
+  textoPadre: any;
+  recibirMensaje(form: any) {
+    this.textoPadre = form;
+  }
 
-  listaPaises = [
-    {
-      id: 1,
-      nombre: 'Argentina',
-    },
-    {
-      id: 2,
-      nombre: 'Brasil',
-    },
-    {
-      id: 3,
-      nombre: 'Chile',
-    },
-    {
-      id: 4,
-      nombre: 'Colombia',
-    },
-    {
-      id: 5,
-      nombre: 'Ecuador',
-    },
-    {
-      id: 6,
-      nombre: 'México',
-    },
-    {
-      id: 7,
-      nombre: 'Perú',
-    },
-    {
-      id: 8,
-      nombre: 'Venezuela'
-    }
-  ];
-
-  listaOcupacion = [
-    {
-      id: 1,
-      nombre: 'Abogado(a)',
-    },
-    {
-      id: 2,
-      nombre: 'Arquitecto(a)',
-    },
-    {
-      id: 3,
-      nombre: 'Deportista',
-    },
-    {
-      id: 4,
-      nombre: 'Estudiante',
-    },
-    {
-      id: 5,
-      nombre: 'Ingeniero(a)',
-    },
-    
-    {
-      id: 6,
-      nombre: 'Licenciado(a)',
-    },
-    {
-      id: 7,
-      nombre: 'Médico(a)',
-    },
-    {
-      id: 8,
-      nombre: 'Profesor(a)'
-    }
-  ];
-
-  listaGeneros = [
-    {
-      id: 1,
-      nombre: 'Masculino',
-    },
-    {
-      id: 2,
-      nombre: 'Femenino',
-    }
-  ];
-
-  listaEstado = [
-    {
-      id: 1,
-      nombre: 'Soltero(a)',
-    },
-    {
-      id: 2,
-      nombre: 'Casado(a)',
-    }
-  ];
-
-
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.buildForm();
@@ -123,22 +36,23 @@ export class FormularioComponent implements OnInit {
       paises: [null, Validators.required],
       fecha: [null, Validators.required],
       ocupacion: [null],
-      telefono:[null, Validators.required]
+      telefono:[null]
     });
 
 
-    this.form.valueChanges.subscribe((data) => {
-    
+   /*  this.form.valueChanges.subscribe((data) => {
+
+      this.formIsValid.emit(this.form.valid);
       
-      this.formIsValid = this.form.valid;
       console.log(this.form.valid);
       
-    });
+    }); */
 
   }
 
-  sendForm() {
+  /* sendForm() {
+    this.formIsValid.emit(this.form.valid);
     console.log(this.form.value);
     console.log(this.form.valid);
-  }
+  } */
 }

@@ -10,6 +10,8 @@ import { MiscelaneousComponent } from './components/miscelaneous/miscelaneous.co
 import { VistaPrincipalComponent } from './vista-principal/vista-principal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioComponent } from './formulario/formulario.component';
+import { PadreComponent } from './padre/padre.component';
+import { HijoComponent } from './hijo/hijo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FormularioComponent } from './formulario/formulario.component';
     NotFoundComponent,
     MiscelaneousComponent,
     VistaPrincipalComponent,
-    FormularioComponent
+    FormularioComponent,
+    PadreComponent,
+    HijoComponent
   ],
   imports: [
     BrowserModule,

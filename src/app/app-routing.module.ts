@@ -6,9 +6,14 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MiscelaneousComponent } from './components/miscelaneous/miscelaneous.component';
 import { VistaPrincipalComponent } from './vista-principal/vista-principal.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { PadreComponent } from './padre/padre.component';
 
 
 const routes: Routes = [
+  {
+    path: 'hola',
+    component: PadreComponent
+  },
   {
     path: 'formulario',
     component: FormularioComponent
