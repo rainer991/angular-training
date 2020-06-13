@@ -5,6 +5,8 @@ import { SitesComponent } from './components/sites/sites.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MiscelaneousComponent } from './components/miscelaneous/miscelaneous.component';
 import { VistaPrincipalComponent } from './vista-principal/vista-principal.component';
+import { AppComponent } from './app.component';
+import { VistaGeneralComponent } from './vista-general/vista-general.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { PadreComponent } from './padre/padre.component';
 
@@ -17,6 +19,10 @@ const routes: Routes = [
   {
     path: 'formulario',
     component: FormularioComponent
+  },
+  {
+    path: 'vistageneral',
+    component: VistaGeneralComponent
   },
   {
     path: 'vistaprincipal',

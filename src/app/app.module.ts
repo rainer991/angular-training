@@ -9,6 +9,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MiscelaneousComponent } from './components/miscelaneous/miscelaneous.component';
 import { VistaPrincipalComponent } from './vista-principal/vista-principal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VistaGeneralComponent } from './vista-general/vista-general.component';
+import { FormularioGeneralComponent } from './components/formulario-general/formulario-general.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { PadreComponent } from './padre/padre.component';
 import { HijoComponent } from './hijo/hijo.component';
@@ -23,7 +25,10 @@ import { HijoComponent } from './hijo/hijo.component';
     VistaPrincipalComponent,
     FormularioComponent,
     PadreComponent,
-    HijoComponent
+    HijoComponent,
+    VistaGeneralComponent,
+    FormularioGeneralComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,7 @@ import { HijoComponent } from './hijo/hijo.component';
     ReactiveFormsModule,
   ],
   bootstrap: [
-    AppComponent
+    AppComponent,
   ]
 })
 export class AppModule { }
